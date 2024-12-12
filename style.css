@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Happy Monkey', cursive;
     background-color: #d3c2b0;
     margin: 0;
     padding: 0;
@@ -14,35 +14,30 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 0;
-    background-color: #333;
+    padding: 0 10px;
+    background-color: #d3c2b0;
+    height: 120px;
 }
 
 header img {
-    width: 100%; /* La imagen ocupa todo el ancho */
-    height: auto; /* Mantiene proporción */
-}
-
-header img {
-    width: 100px; /* Incrementa el tamaño de la imagen */
-    height: 100px; /* Incrementa el tamaño de la imagen */
-    margin-left: 15px;
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
 }
 
 header h1 {
-    color: white;
-    margin: 0;
-    font-size: 24px;
+    color: #333;
+    font-size: 48px;
+    text-align: center;
     flex-grow: 1;
-    text-align: center; /* Centra el título horizontalmente */
 }
 
 .stars {
-    flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 50px;
+    margin: 20px;
+    position: relative;
 }
 
 .stars img {
@@ -51,59 +46,175 @@ header h1 {
 }
 
 .game-container {
-    flex: 1 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin: 20px;
+    max-width: 80%; /* Limita el ancho del contenedor para mejor apariencia */
+    margin: 0 auto; /* Centra el contenedor */
 }
 
 .game {
-    background-color: #000;
+    background-color: transparent;
     color: white;
     border-radius: 8px;
     overflow: hidden;
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .game img {
     width: 100%;
-    height: 150px; /* Ajuste para limitar la altura */
+    height: auto;
+    max-width: 300px; /* Ajusta según el diseño */
     object-fit: cover;
+    transition: transform 0.3s ease; /* Animación para mejor estética */
 }
 
-.game p {
+.game img:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+
+.game a {
+    display: block;
     margin: 0;
+    width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #0078ff;
+    border-bottom: solid rgba(0, 0, 0, 0.438) 2px;
     font-size: 16px;
+    text-align: center;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: white; /* Asegura que el texto sea visible */
+}
+
+.game a:hover {
+    background-color: rgba(0, 120, 255, 0.63); /* Hover con 63% de opacidad */
+}
+
+.game a:active {
+    background-color: rgba(0, 120, 255, 0.81); /* Active con 81% de opacidad */
 }
 
 .contact {
-    flex: 0 0 auto;
-    margin-top: 30px;
+    margin-top: auto;
     padding: 20px 0;
-    background-color: #d3c2b0; /* Cambiar a tono similar al fondo */
+    background-color: #d3c2b0;
     border-top: 2px solid #ccc;
 }
 
 .contact a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #0078ff;
     color: white;
     text-decoration: none;
     font-size: 18px;
     border-radius: 5px;
+    border-bottom: solid rgba(0, 0, 0, 0.438) 2px;
+}
+
+.contact a:hover {
+    background-color: rgba(0, 120, 255, 0.63); /* Hover con 63% de opacidad */
+}
+
+.contact a:active {
+    background-color: rgba(0, 120, 255, 0.81); /* Active con 81% de opacidad */
 }
 
 footer {
-    flex: 0 0 auto;
     padding: 10px;
     background-color: #333;
     color: white;
     font-size: 14px;
+}
+
+/* Add bottom stars */
+.stars-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.stars-bottom img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    header img {
+        margin: 0 0 10px;
+    }
+
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stars, .stars-bottom {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .stars img, .stars-bottom img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* MODO OSCURO */
+.dark-theme {
+    background-color: #555;
+    color: white;
+}
+
+.dark-theme header {
+    background-color: #555;
+}
+
+.dark-theme .game a {
+    background-color: #0026ff;
+}
+
+.dark-theme .game a:hover {
+    background-color: rgba(0, 38, 255, 0.63); /* Hover con 63% de opacidad en modo oscuro */
+}
+
+.dark-theme .game a:active {
+    background-color: rgba(0, 38, 255, 0.81); /* Active con 81% de opacidad en modo oscuro */
+}
+
+.dark-theme .contact {
+    background-color: #555;
+    color: white;
+}
+
+.dark-theme .contact a {
+    background-color: #0026ff;
+    color: white;
+}
+
+.contact a:hover {
+    background-color: rgba(0, 38, 255, 0.63); /* Hover con 63% de opacidad */
+}
+
+.contact a:active {
+    background-color: rgba(0, 38, 255, 0.81); /* Active con 81% de opacidad */
+}
+
+
+.dark-theme .body {
+    background-color: #555;
 }
