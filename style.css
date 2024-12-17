@@ -236,6 +236,12 @@ footer {
 
 
 /* MODO OSCURO */
+.dark-theme header h1 {
+    color: #ffffff;
+    font-size: 48px;
+    text-align: center;
+    flex-grow: 1;
+}
 .dark-theme {
     background-color: #555;
     color: white;
